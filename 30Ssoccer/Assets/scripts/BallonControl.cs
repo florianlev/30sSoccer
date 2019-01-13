@@ -14,12 +14,14 @@ public class BallonControl : MonoBehaviour
     private GameObject J2;
 
 
+
     void Start()
     {
         J1 = GameObject.FindWithTag("But1");
 
         J2 = GameObject.FindWithTag("But2");
     }
+
 
     void OnTriggerEnter(Collider collision)
     {
@@ -47,6 +49,7 @@ public class BallonControl : MonoBehaviour
         yield return new WaitForSeconds(3);
         J1.transform.position= new Vector3(-10, J1.transform.position.y);
         J2.transform.position = new Vector3(10, J2.transform.position.y);
+        this.gameObject.transform.position = new Vector3(0, this.gameObject.transform.position.y);
 
 
     }

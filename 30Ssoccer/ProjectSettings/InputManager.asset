@@ -70,18 +70,34 @@ InputManager:
     axis: 1
     joyNum: 4
   - serializedVersion: 3
-    m_Name: Submit
+    m_Name: kick_P1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
     altNegativeButton: 
-    altPositiveButton: 
-    gravity: 0
-    dead: 0.19
-    sensitivity: 1
+    altPositiveButton: joystick 5 button 0
+    gravity: 1000
+    dead: 0.0001
+    sensitivity: 1000
     snap: 0
     invert: 1
-    type: 2
-    axis: 1
-    joyNum: 4
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: kick_P2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: joystick 1 button 0
+    gravity: 1000
+    dead: 0.0001
+    sensitivity: 1000
+    snap: 0
+    invert: 1
+    type: 0
+    axis: 0
+    joyNum: 0

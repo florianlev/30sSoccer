@@ -6,6 +6,7 @@ TagManager:
   tags:
   - But1
   - But2
+  - ballon
   layers:
   - Default
   - TransparentFX
