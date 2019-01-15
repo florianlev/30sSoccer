@@ -13,6 +13,8 @@ public class Timer : MonoBehaviour
     GameObject J1;
     GameObject J2;
     GameObject ball;
+    public GameObject explosionEffect;
+
 
     private void Start()
     {
@@ -34,10 +36,13 @@ public class Timer : MonoBehaviour
 
     IEnumerator ReplaceGame()
     {
+        Instantiate(explosionEffect, transform.position, transform.rotation);
+
         yield return new WaitForSeconds(3);
         J1.transform.position = new Vector3(-10, J1.transform.position.y);
         J2.transform.position = new Vector3(10, J2.transform.position.y);
         ball.transform.position = new Vector3(0, ball.transform.position.y);
         timeLeft = 30f;
+        Destroy(explosionEffect);
     }
 }

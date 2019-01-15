@@ -768,7 +768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalCtrl: Horizontal_P2
   verticalCtrl: Vertical_P2
-  kickCtrl: kick_P1
+  kickCtrl: kick_P2
   movementSpeed: 15
   scoreText: {fileID: 1788366736}
   ball: {fileID: 1118386369}

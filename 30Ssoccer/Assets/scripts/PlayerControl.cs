@@ -51,7 +51,7 @@ public class PlayerControl : MonoBehaviour
         movementVector.y -= gravity * Time.deltaTime;
 
         characterController.Move(movementVector * Time.deltaTime);
-
+   
 
     }
 
@@ -80,31 +80,27 @@ public class PlayerControl : MonoBehaviour
         }
         if (hit.moveDirection.y < -0.1)
         {
+
             return;
         }
-
         Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
+
+        if (Input.GetButtonDown(kickCtrl))
+        {
+            print("TEST");
+            Vector3 pushDire = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
+
+            body.AddForce(pushDire, ForceMode.Force);
+
+        }
+
+
         body.velocity = pushDir * kickForce;
 
     }
 
 
 
-    void OnCollisionEnter(Collision collision)
-    {
-       
-        if (collision.gameObject.tag == "ballon")
-        {
-            print("TEST");
-            if (Input.GetButtonDown(kickCtrl))
-            {
-                print("TEST");
-
-                /*Vector3 pushDir = (collision.transform.position - transform.position).normalized;
-                collision.rigidbody.AddForce(-pushDir * kickForce, ForceMode.Impulse);*/
-            }
-        }
-    }
 }
 
 
