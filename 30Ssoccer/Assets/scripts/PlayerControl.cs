@@ -30,7 +30,7 @@ public class PlayerControl : MonoBehaviour
     public Text scoreText;
 
     public GameObject ball;
-    public float kickForce = 10;
+    public float kickForce = 2;
 
 
     // Start is called before the first frame update
@@ -70,17 +70,38 @@ public class PlayerControl : MonoBehaviour
     }
 
 
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Rigidbody body = hit.collider.attachedRigidbody;
+
+        if (body == null || body.isKinematic)
+        {
+            return;
+        }
+        if (hit.moveDirection.y < -0.1)
+        {
+            return;
+        }
+
+        Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
+        body.velocity = pushDir * kickForce;
+
+    }
+
+
+
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "ballon")
+       
+        if (collision.gameObject.tag == "ballon")
         {
-
+            print("TEST");
             if (Input.GetButtonDown(kickCtrl))
             {
                 print("TEST");
 
-                Vector3 pushDir = (collision.transform.position - transform.position).normalized;
-                collision.rigidbody.AddForce(-pushDir * kickForce, ForceMode.Impulse);
+                /*Vector3 pushDir = (collision.transform.position - transform.position).normalized;
+                collision.rigidbody.AddForce(-pushDir * kickForce, ForceMode.Impulse);*/
             }
         }
     }

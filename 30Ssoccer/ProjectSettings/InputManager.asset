@@ -20,7 +20,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 5
+    joyNum: 1
   - serializedVersion: 3
     m_Name: Vertical_P1
     descriptiveName: 
@@ -36,7 +36,7 @@ InputManager:
     invert: 1
     type: 2
     axis: 1
-    joyNum: 5
+    joyNum: 1
   - serializedVersion: 3
     m_Name: Horizontal_P2
     descriptiveName: 
